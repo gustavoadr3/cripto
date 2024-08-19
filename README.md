@@ -7,5 +7,5 @@ Este é um projeto de pipeline de dados para coleta, transformação e armazenam
 O objetivo deste projeto é criar um pipeline completo que:
 - Extrai dados de criptomoedas de uma API pública.
 - Realiza transformações nos dados, como limpeza e cálculo de métricas.
-- Armazena os dados transformados em um banco de dados MySQL hospedado no Google Cloud SQL.
+- Armazena os dados transformados em um banco de dados MySQL.
 - Automatiza o processo de ETL (Extração, Transformação e Carga).
