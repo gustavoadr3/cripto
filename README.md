@@ -1,11 +1,11 @@
-# Crypto Data Pipeline
+🚀 Crypto Data Pipeline
+Bem-vindo ao Crypto Data Pipeline! Este projeto foi desenvolvido para demonstrar uma solução completa de coleta, transformação e armazenamento de dados de criptomoedas.
 
-Este é um projeto de pipeline de dados para coleta, transformação e armazenamento de informações de criptomoedas utilizando Python, MySQL e Google Cloud SQL. O projeto inclui integração com uma API de mercado de criptomoedas e automação do pipeline.
+📝 Descrição do Projeto
+Este projeto tem como objetivo construir um pipeline de dados eficiente e automatizado para processar informações de criptomoedas em tempo real, integrando-se a uma API de mercado. A seguir, os principais componentes do projeto:
 
-## Descrição
+Extração de Dados: Coleta de dados de criptomoedas em tempo real a partir de uma API pública.
+Transformação de Dados: Processamento e limpeza dos dados extraídos, incluindo a aplicação de cálculos de métricas financeiras relevantes.
+Armazenamento de Dados: Persistência dos dados transformados em um banco de dados MySQL.
+Automação do Pipeline: Implementação de um processo automatizado para o ETL dos dados, garantindo a atualização contínua das informações.
 
-O objetivo deste projeto é criar um pipeline completo que:
-- Extrai dados de criptomoedas de uma API pública.
-- Realiza transformações nos dados, como limpeza e cálculo de métricas.
-- Armazena os dados transformados em um banco de dados MySQL.
-- Automatiza o processo de ETL (Extração, Transformação e Carga).
