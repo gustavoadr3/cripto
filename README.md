@@ -1,7 +1,7 @@
-🚀 Crypto Data Pipeline
-Bem-vindo ao Crypto Data Pipeline! Este projeto foi desenvolvido para demonstrar uma solução completa de coleta, transformação e armazenamento de dados de criptomoedas.
+Este projeto foi desenvolvido para demonstrar uma solução completa de coleta, transformação e armazenamento de dados de criptomoedas.
 
-📝 Descrição do Projeto
+Descrição do Projeto:
+
 Este projeto tem como objetivo construir um pipeline de dados eficiente e automatizado para processar informações de criptomoedas em tempo real, integrando-se a uma API de mercado. A seguir, os principais componentes do projeto:
 
 Extração de Dados: Coleta de dados de criptomoedas em tempo real a partir de uma API pública.
