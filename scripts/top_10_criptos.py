@@ -11,7 +11,7 @@ def top_10_criptos():
         'per_page': 10,
         'page': 1
     }
-    
+
     response = requests.get(url, params=params)
     if response.status_code == 200:
         data = response.json()
