@@ -4,7 +4,7 @@ import pandas as pd
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from conectar_banco import conexão_banco
-
+from mysql.connector import connect, Error
 
 # Função para extrair os dados da API
 def top_10_criptos():
@@ -41,7 +41,6 @@ def tratar_dados_top10(df):
     df['last_updated'] = pd.to_datetime(df['last_updated']).dt.date
     df.columns = ['sigla', 'nome', 'preco_atual', 'capitalizacao_mercado', 'posicao_mercado', 'volume_total', 'preco_max_24h', 'preco_min_24h', 'variacao_preco_24h', 'percentual_variacao_24h', 'max_historico', 'data_max_historico', 'min_historico', 'data_min_historico', 'ultima_atualizacao']
     return df
-
 
 # Função para salvar os dados tratados 
 def salvar_dados_tratados_top10(df, filename='top_10_criptos.csv'):
