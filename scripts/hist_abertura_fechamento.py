@@ -39,29 +39,6 @@ def salvar_dados_ohlc(df, filename='hist_ohlc.csv'):
     file_path = os.path.join(raw_data_path, filename)
     df.to_csv(file_path, index=False)
     print(f"Dados salvos em: {file_path}")   
-    
-# Função para criar tabela no banco 
-def criar_tabela_historico_ohlc(connection):
-    try:
-        cursor = connection.cursor()
-        tabela_sql = """
-        CREATE TABLE IF NOT EXISTS historicos_ohlc (
-            nome VARCHAR(100),
-            data DATE,
-            abertura DECIMAL(18, 8),
-            maior_valor DECIMAL(18, 8),
-            menor_valor DECIMAL(18, 8),
-            fechamento DECIMAL(18, 8)
-        )
-        """
-        cursor.execute(tabela_sql)
-        connection.commit()
-        print("Tabela 'historicos_ohlc' criada ou já existe.")
-    except Error as e:
-        print(f"Erro ao criar a tabela: {e}")
-    finally:
-        if cursor:
-            cursor.close()
 
 # Função para inserir dados na tabela 
 def inserir_dados_hist_ohlc(connection, df):
@@ -87,7 +64,6 @@ if __name__ == "__main__":
                 df_historico_ohlc = pd.concat([df_historico_ohlc,df_precos_hist], ignore_index=True)
     conect = conexão_banco()
     if conect:
-        criar_tabela_historico_ohlc(conect)
         salvar_dados_ohlc(df_historico_ohlc)
         inserir_dados_hist_ohlc(conect, df_historico_ohlc)
         conect.close()

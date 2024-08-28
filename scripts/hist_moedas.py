@@ -44,26 +44,6 @@ def salvar_dados_historico(df, filename='hist_criptos.csv'):
     df.to_csv(file_path, index=False)
     print(f"Dados salvos em: {file_path}")
 
-# Função para criar tabela no banco 
-def criar_tabela_historico(connection):
-    try:
-        cursor = connection.cursor()
-        tabela_sql = """
-        CREATE TABLE IF NOT EXISTS valores_historicos (
-            nome VARCHAR(100),
-            data DATE,
-            preco DECIMAL(18, 8)
-        )
-        """
-        cursor.execute(tabela_sql)
-        connection.commit()
-        print("Tabela 'valores_historicos' criada ou já existe.")
-    except Error as e:
-        print(f"Erro ao criar a tabela: {e}")
-    finally:
-        if cursor:
-            cursor.close()
-
 # Função para inserir dados na tabela 
 def inserir_dados_hist(connection, df):
     try:
@@ -89,9 +69,8 @@ if __name__ == "__main__":
             df_historico = pd.concat([df_historico,df_precos_hist], ignore_index=True)
     conect = conexão_banco()
     if conect:
-        criar_tabela_historico(conect)
-    salvar_dados_historico(df_historico)
-    inserir_dados_hist(conect, df_historico)
+        salvar_dados_historico(df_historico)
+        inserir_dados_hist(conect, df_historico)
     conect.close()
 
 
